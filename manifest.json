@@ -1,11 +1,31 @@
 {
-  "name": "Getting Started Example",
+  "name": "Open Vision Technologies Data Sync Tool ",
   "version": "1.0",
-  "description": "Build an Extension!",
-  "permissions": ["storage"],
+  "description": "browser update suite for Altawreedat system",
+  "permissions": ["storage","declarativeContent"],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["background.js","jquery.js"],
     "persistent": false
+  },
+  "web_accessible_resources": ["logo.png"],
+  "content_scripts": [{
+   
+    "matches": ["http://localhost:8000/*"],
+    "js": ["jquery.js","content.js"],
+    "css" : ["float.css"],
+    "run_at": "document_end"
+  }]
+  ,
+  "options_page": "popup.html",
+
+  "page_action": {
+   
+    "default_icon": {
+      "16": "images/main-16.png",
+      "32": "images/main-32.png",
+      "48": "images/main-48.png",
+      "128": "images/main-128.png"
+    }
   },
   "manifest_version": 2
 }
