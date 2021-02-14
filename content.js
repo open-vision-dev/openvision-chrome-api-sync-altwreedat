@@ -1,21 +1,19 @@
 function hi()
 {
+    sendData = new Array();
     window.alert("updating data started");
-   let table=document.getElementsByTagName("table")[0].rows;
-    for(let i=1, len = table.length,current=[];i<len;i++){
-        current = table[i];
-     console.log(i);
-     console.log(current);
-     break;
-     let   id = current.cells(0);
-     let   name = current.cells(1);
-     let   code = current.cells(2);
-     let   desc = current.cells(3);
-     let   price = current.cells(4);
-     let   qty = current.cells(5);
-     
-
+   let table=document.getElementsByTagName("tr");
+     for(let i=0;i<table.length;i++){
+     current=table[i];
+     let   id = current.cells[0].textContent;
+     let   name = current.cells[1].textContent;
+     let   code = current.cells[2].textContent;
+     let   desc = current.cells[3].textContent;
+     let   price = current.cells[4].textContent;
+    // let   qty = current.cells[5];
+    sendData.push({'id':id,"name":name,"code":code,"desc":desc,"price":price});
     }
+    return sendData;
 }
 hi();
 

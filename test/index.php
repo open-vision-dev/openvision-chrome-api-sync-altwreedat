@@ -36,5 +36,6 @@ X;                    }
                     ?>
                 </tbody>
             </table>
+            <script src='jquery.js'></script>
     </body>
 </html>
